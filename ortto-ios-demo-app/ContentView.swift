@@ -36,13 +36,6 @@ struct ContentView: View {
             }
             .padding()
             
-            Button(action: identifyAgain) {
-                Text("Identify Again")
-            }
-            .padding()
-            
-            
-            
             Button(action: logOrttoSession) {
                 Text("Log Ortto Session")
             }
