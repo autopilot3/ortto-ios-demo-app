@@ -60,10 +60,11 @@ struct ContentView: View {
     
     private func login() {
         // Simulate login with a random name
-       
         isLoggedIn = true
         let uuid = UUID().uuidString
         
+        let userName = ["Chris", "Joe", "Den", "Pete", "Eva", "Kate", "Donald", "John", "Zoe", "Pinnochio", "Erica", "Jacquie"].randomElement() ?? "User"
+
         // Identify user with Ortto
         let user = UserIdentifier(
             contactID: nil,
@@ -83,35 +84,6 @@ struct ContentView: View {
                 }
             }
         }
-        
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-//            if granted {
-//                DispatchQueue.main.async {
-//                    UIApplication.shared.registerForRemoteNotifications()
-//                }
-//            }
-//        }
-//    
-    }
-    
-    private func identifyAgain() {
-        
-//        print("Ortto \(Ortto.shared.appKey) \(Ortto.shared.apiEndpoint)")
-//        
-//        guard let user = Ortto.shared.userStorage.user else { return }
-//        let uuid = UUID().uuidString
-//        userName = ["Chris", "Joe", "Den", "Pete", "Eva", "Kate", "Donald", "John", "Zoe", "Pinnochio", "Erica", "Jacquie"].randomElement() ?? "User"
-//        // Identify user with Ortto
-//        let user = UserIdentifier(
-//            contactID: nil,
-//            email: "\(userName.lowercased())+\(uuid)@example.com",
-//            phone: nil,
-//            externalID: uuid,
-//            firstName: userName,
-//            lastName: "User"
-//        )
-//        
-//        Ortto.shared.identify(user)
     }
     
     private func logout() {
